@@ -2,6 +2,16 @@
 
 의료 정보 검색 및 커뮤니티 웹 애플리케이션입니다.
 
+---
+
+## ⚡️ 완전한 Python(Flask) 기반
+
+-   이 프로젝트는 **Node.js, JavaScript, npm, node_modules** 등 JS 관련 파일/폴더/의존성이 전혀 없습니다.
+-   모든 기능은 **오직 Python(Flask)와 HTML/CSS**로만 구현되어 있습니다.
+-   main.js, package.json, package-lock.json, node_modules 등은 모두 삭제되었습니다.
+
+---
+
 ## 설치 및 설정
 
 ### 1. 필요한 패키지 설치
@@ -57,7 +67,7 @@ Dr.web/
   │     └── main.py
   ├── static/               # 정적 파일(css, image 등)
   ├── templates/            # HTML 템플릿
-  ├── config.env            # (Git에 올리지 마세요!) 환경 변수 파일
+  ├── .env                  # (Git에 올리지 마세요!) 환경 변수 파일
   └── ...
 ```
 
