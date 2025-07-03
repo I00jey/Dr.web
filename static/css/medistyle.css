@@ -1,0 +1,504 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*홈페이지 전체 코드 부분*/
+body {
+  background-color: #ffffff;
+}
+
+/*홈페이지의 맨 윗부분 코드 시작*/
+#main_header {
+  height: 100px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+/*header 부분의 a 태그, 현재 로고부분 지정*/
+#main_header a {
+  text-decoration: none;
+  /*목록 태그 스타일 (점같은거), a태그의 밑줄 없앰*/
+  color: #000000;
+  /*글자 색 지정*/
+}
+
+#main_logo {
+  position: absolute;
+  /*절대 위치 좌표 설정*/
+  line-height: 100px;
+  /*속성값 = header의 높이로 지정해서 수직 가운데 정렬*/
+  margin-left: 100px;
+  /*왼쪽 마진 크기 지정*/
+  margin-top: 15px;
+}
+
+#main_menu {
+  margin-top: 70px;
+  margin-bottom: 0px;
+  text-align: center;
+  padding: 0px;
+  word-spacing: 60px;
+}
+.menu {
+  font-size: 20px;
+}
+
+.menu > a {
+  text-decoration: none;
+  color: #000000;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  display: inline;
+  margin-left: 30px;
+}
+
+/*여기까지 홈페이지 윗부분 로고&메뉴 코드*/
+
+.search {
+  height: 40px;
+  width: 600px;
+  border: 7px solid #6fc5ff;
+  background: #ffffff;
+  margin-left: 450px;
+  margin-bottom: 20px;
+}
+
+.input_text {
+  font-size: 16px;
+  width: 525px;
+  border: 0px;
+  outline: none;
+  margin: 10px;
+  height: 0 auto;
+}
+.input_button_div {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin-left: 28%;
+  margin-top: -6%;
+}
+.input_button {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  background: #4cb7ff;
+  cursor: pointer;
+  padding: 0.8rem 1.3rem;
+  background-image: url("/static/image/searchicon.png");
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+  background-position: 3px 3px;
+}
+
+#content {
+  margin: 0px auto;
+  height: 700px;
+  max-height: 100%;
+  width: 100%;
+  padding: auto;
+  position: relative;
+}
+
+#content1 {
+  background-color: #a5dbff;
+  width: 100%;
+  height: 360px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-weight: lighter;
+  position: absolute;
+  z-index: 0;
+}
+
+#content1 a {
+  font-size: 55px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+#content1 img {
+  margin-top: 50px;
+  margin-bottom: -10px;
+}
+
+#sea {
+  margin-top: 70px;
+  margin-left: 16%;
+  position: absolute;
+  color: whitesmoke;
+}
+#sea input {
+  font-size: 20px;
+  background: white;
+  width: 230px;
+  border-style: hidden;
+  height: 70px;
+  border-radius: 50px;
+  display: inline;
+  color: #000000;
+  text-align: center;
+  border-color: whitesmoke;
+}
+#input_medi_name::placeholder {
+  color: #808080;
+}
+#sea0 {
+  margin-top: 72px;
+  margin-left: 33%;
+  color: whitesmoke;
+  position: absolute;
+}
+#sea0 option {
+  font-size: 15px;
+  color: #333333;
+}
+#sea0 select {
+  font-size: 20px;
+  background: white;
+  width: 230px;
+  border-style: hidden;
+  height: 70px;
+  color: #333333;
+  border-radius: 50px;
+  text-align: center;
+  border-color: whitesmoke;
+}
+#sea1 {
+  margin-top: 72px;
+  margin-left: 50%;
+  color: whitesmoke;
+  position: absolute;
+}
+#sea1 option {
+  font-size: 15px;
+  color: #333333;
+}
+#sea1 select {
+  font-size: 20px;
+  background: white;
+  width: 230px;
+  border-style: hidden;
+  height: 70px;
+  color: #333333;
+  border-radius: 50px;
+  text-align: center;
+  border-color: whitesmoke;
+}
+
+#but {
+  margin-top: 30px;
+  margin-right: 100px;
+  float: right;
+}
+
+#sea2 {
+  margin-top: 72px;
+  margin-left: 67%;
+  color: whitesmoke;
+  position: absolute;
+}
+#sea2 input {
+  font-size: 20px;
+  background: white;
+  width: 230px;
+  border-style: hidden;
+  height: 70px;
+  color: #333333;
+  border-radius: 50px;
+  text-align: center;
+  border-color: whitesmoke;
+}
+#sea2 option {
+  font-size: 15px;
+  color: #333333;
+}
+#sea3 {
+  margin-top: 200px;
+  margin-left: 33%;
+  color: whitesmoke;
+  position: absolute;
+}
+
+button {
+  margin: 0;
+  padding: 0.5rem 1rem;
+
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+
+  display: inline-block;
+  width: auto;
+
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  cursor: pointer;
+  background: #42b3ff;
+  transition: 0.5s;
+  margin-left: 75%;
+  margin-top: 85px;
+}
+
+#input_file {
+  font-size: 20px;
+  background: white;
+  width: 500px;
+  border-style: hidden;
+  line-height: 70px;
+  height: 70px;
+  color: #333333;
+  border-radius: 50px;
+  text-align: center;
+  position: absolute;
+  border-color: whitesmoke;
+}
+#input_file label {
+  font-size: 20px;
+  font-weight: 380;
+}
+#submit_file button {
+  background-color: #ffffff;
+}
+#content2 {
+  width: 1400px;
+  height: 300px;
+  margin: 0px auto;
+  left: 3.8%;
+  padding-bottom: 5px;
+  position: absolute;
+  top: 54.5%;
+  background-color: #d5eeff;
+  border-radius: 30px;
+  padding-top: 10px;
+}
+
+#content2hr {
+  position: relative;
+  width: 1400px;
+  height: 1px;
+  margin-top: -100px;
+}
+
+.content2item {
+  position: relative;
+  line-height: 60px;
+  text-align: center;
+  font-size: 18pt;
+}
+.content2data_list {
+  height: 50px;
+}
+.content2data {
+  color: #393939;
+  text-align: center;
+  font-size: 11pt;
+  position: relative;
+  margin-top: -80px;
+}
+.image_medi {
+  display: inline-block;
+  width: 190px;
+}
+.image_medi > img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: -35px;
+}
+.name {
+  display: inline-block;
+  width: 390px;
+  left: 45%;
+}
+.comp {
+  display: inline-block;
+  width: 190px;
+  left: 45%;
+}
+.kind {
+  display: inline-block;
+  width: 190px;
+  left: 45%;
+}
+.shape {
+  display: inline-block;
+  width: 180px;
+  left: 45%;
+}
+.part {
+  display: inline-block;
+  width: 400px;
+  left: 45%;
+}
+
+/*여기부터 푸터 */
+#main_bottom {
+  clear: both;
+  background-color: #333333;
+  color: white;
+  text-align: center;
+  padding: 1em 0px;
+}
+
+.bottom {
+  display: inline;
+  word-spacing: 100px;
+}
+
+.modal_wrap {
+  display: none;
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  margin: -250px 0 0 -250px;
+  border: 7px solid #b4e1ff;
+  background: #e9f6ff;
+  font-weight: 600;
+  border-radius: 20px;
+  z-index: 2;
+  text-align: center;
+}
+
+.modal_close {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 3px;
+  margin-right: 3px;
+  right: 0;
+  color: #000000;
+}
+
+.modal_close > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(https://img.icons8.com/metro/26/000000/close-window.png);
+  text-indent: -9999px;
+}
+
+#aaa {
+  color: #000000;
+}
+/* 여기까지 개발자 이름 */
+
+.modal_wrap1 {
+  display: none;
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  margin: -250px 0 0 -250px;
+  border: 7px solid #b4e1ff;
+  background: #e9f6ff;
+  font-weight: 600;
+  border-radius: 20px;
+  z-index: 2;
+  text-align: center;
+}
+
+.modal_close1 {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 3px;
+  margin-right: 3px;
+  right: 0;
+  color: #000000;
+}
+
+.modal_close1 > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(https://img.icons8.com/metro/26/000000/close-window.png);
+  text-indent: -9999px;
+}
+/* 여기까지 개발자 이메일 */
+
+.modal_wrap2 {
+  display: none;
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  margin: -250px 0 0 -250px;
+  border: 7px solid #b4e1ff;
+  background: #e9f6ff;
+  font-weight: 600;
+  border-radius: 20px;
+  z-index: 2;
+  text-align: center;
+}
+
+.modal_close2 {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 3px;
+  margin-right: 3px;
+  right: 0;
+  color: #000000;
+}
+
+.modal_close2 > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(https://img.icons8.com/metro/26/000000/close-window.png);
+  text-indent: -9999px;
+}
+/* 여기까지 이용약관 */
+
+.modal_wrap3 {
+  display: none;
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  margin: -250px 0 0 -250px;
+  border: 7px solid #b4e1ff;
+  background: #e9f6ff;
+  font-weight: 600;
+  border-radius: 20px;
+  z-index: 2;
+  text-align: center;
+}
+
+.modal_close3 {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 3px;
+  margin-right: 3px;
+  right: 0;
+  color: #000000;
+}
+
+.modal_close3 > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(https://img.icons8.com/metro/26/000000/close-window.png);
+  text-indent: -9999px;
+}
+/* 여기까지 개인정보처리방침 */
+/*푸터 코드 끝*/

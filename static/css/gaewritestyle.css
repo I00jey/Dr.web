@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*홈페이지 전체 코드 부분*/
+body {
+  background-color: #ffffff;
+}
+
+/*홈페이지의 맨 윗부분 코드 시작*/
+#main_header {
+  height: 100px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+#main_logo {
+  position: absolute;
+  /*절대 위치 좌표 설정*/
+  line-height: 100px;
+  /*속성값 = header의 높이로 지정해서 수직 가운데 정렬*/
+  margin-left: 100px;
+  /*왼쪽 마진 크기 지정*/
+  margin-top: 15px;
+}
+
+#main_menu {
+  margin-top: 70px;
+  margin-bottom: 50px;
+  text-align: center;
+  padding: 1em 0px;
+  word-spacing: 60px;
+}
+.menu {
+  font-size: 20px;
+}
+
+.menu > a {
+  text-decoration: none;
+  color: #000000;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+li {
+  display: inline;
+  margin-left: 30px;
+}
+
+/*여기까지 홈페이지 윗부분 로고&메뉴 코드*/
+
+.search {
+  height: 40px;
+  width: 600px;
+  border: 7px solid #6fc5ff;
+  background: #ffffff;
+  margin-left: 450px;
+  margin-bottom: 20px;
+}
+
+.input_text {
+  font-size: 16px;
+  width: 525px;
+  border: 0px;
+  outline: none;
+  margin: 10px;
+  height: 0 auto;
+}
+.input_button_div {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin-left: 28%;
+  margin-top: -6%;
+}
+.input_button {
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  background: #4cb7ff;
+  cursor: pointer;
+  padding: 0.8rem 1.3rem;
+  background-image: url("/static/image/searchicon.png");
+  background-repeat: no-repeat;
+  background-size: 80% 80%;
+  background-position: 3px 3px;
+}
+
+/*여기까지 홈페이지 윗부분 로고&메뉴 코드*/
+#main_content {
+  height: 700px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.board_list_wrap {
+  padding: 50px;
+}
+
+#gg {
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+textarea {
+  font-size: 20px;
+}
+
+/*여기까지임*/
+
+#main_bottom {
+  clear: both;
+  background-color: #333333;
+  color: white;
+  text-align: center;
+  padding: 1em 0px;
+}
+
+.bottom {
+  display: inline;
+  word-spacing: 100px;
+}
+
+.modal_wrap {
+  display: none;
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  margin: -250px 0 0 -250px;
+  border: 7px solid #b4e1ff;
+  background: #e9f6ff;
+  font-weight: 600;
+  border-radius: 20px;
+  z-index: 2;
+  text-align: center;
+}
+
+.modal_close {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 3px;
+  margin-right: 3px;
+  right: 0;
+  color: #000000;
+}
+
+.modal_close > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(https://img.icons8.com/metro/26/000000/close-window.png);
+  text-indent: -9999px;
+}
+
+#aaa {
+  color: #000000;
+}
+/* 여기까지 개발자 이름 */
+
+.modal_wrap1 {
+  display: none;
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  margin: -250px 0 0 -250px;
+  border: 7px solid #b4e1ff;
+  background: #e9f6ff;
+  font-weight: 600;
+  border-radius: 20px;
+  z-index: 2;
+  text-align: center;
+}
+
+.modal_close1 {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 3px;
+  margin-right: 3px;
+  right: 0;
+  color: #000000;
+}
+
+.modal_close1 > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(https://img.icons8.com/metro/26/000000/close-window.png);
+  text-indent: -9999px;
+}
+/* 여기까지 개발자 이메일 */
+
+.modal_wrap2 {
+  display: none;
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  margin: -250px 0 0 -250px;
+  border: 7px solid #b4e1ff;
+  background: #e9f6ff;
+  font-weight: 600;
+  border-radius: 20px;
+  z-index: 2;
+  text-align: center;
+}
+
+.modal_close2 {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 3px;
+  margin-right: 3px;
+  right: 0;
+  color: #000000;
+}
+
+.modal_close2 > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(https://img.icons8.com/metro/26/000000/close-window.png);
+  text-indent: -9999px;
+}
+/* 여기까지 이용약관 */
+
+.modal_wrap3 {
+  display: none;
+  width: 500px;
+  height: 200px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  margin: -250px 0 0 -250px;
+  border: 7px solid #b4e1ff;
+  background: #e9f6ff;
+  font-weight: 600;
+  border-radius: 20px;
+  z-index: 2;
+  text-align: center;
+}
+
+.modal_close3 {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 3px;
+  margin-right: 3px;
+  right: 0;
+  color: #000000;
+}
+
+.modal_close3 > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(https://img.icons8.com/metro/26/000000/close-window.png);
+  text-indent: -9999px;
+}
+/* 여기까지 개인정보처리방침 */
