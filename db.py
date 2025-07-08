@@ -1,4 +1,4 @@
-import pymysql
+import psycopg2
 import os
 from dotenv import load_dotenv
 
@@ -11,14 +11,14 @@ def load_config():
 # DB 연결 함수
 def get_db_connection():
     load_config()
-    connect_db = pymysql.connect(
+    conn = psycopg2.connect(
         user=os.getenv("DB_USER"),
-        passwd=os.getenv("DB_PASSWORD"),
+        password=os.getenv("DB_PASSWORD"),
         host=os.getenv("DB_HOST"),
-        db=os.getenv("DB_NAME"),
-        charset=os.getenv("DB_CHARSET"),
+        dbname=os.getenv("DB_NAME"),
+        port=os.getenv("DB_PORT"),
     )
-    return connect_db
+    return conn
 
 
 def get_cursor(conn):
