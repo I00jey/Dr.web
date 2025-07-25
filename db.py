@@ -17,6 +17,7 @@ def get_db_connection():
         host=os.getenv("DB_HOST"),
         dbname=os.getenv("DB_NAME"),
         port=os.getenv("DB_PORT"),
+        options="-c client_encoding=UTF8",
     )
     return conn
 
