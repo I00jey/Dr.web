@@ -117,8 +117,8 @@
           {%for r in data_list_reply%}
           <div id="reply_view">
             <img src="{{url_for('static',filename='image/reply.png') }}" width="30" height="30" />
-            <div class="re_writer">{{r[0]}}</div>
-            <div class="re_content">{{r[1]}}</div>
+            <div class="re_writer">{{r[1]}}</div>
+            <div class="re_content">{{r[2]}}</div>
           </div>
           {%endfor%}
           <form action="/reply_write" method="post" class="reply_write_wrap">

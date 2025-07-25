@@ -75,7 +75,7 @@ def reply_write():
     cursor.execute(sql, values)
     conn.commit()
     conn.close()
-    return gae()
+    return gae_view()
 
 
 @board_bp.route("/gong.html")
