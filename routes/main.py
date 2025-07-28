@@ -10,35 +10,40 @@ main_bp = Blueprint("main", __name__)
 @main_bp.route("/")
 def start():
     req = requests.get(os.getenv("NEWS_URL"), headers={"User-Agent": "Mozilla/5.0"})
+    print("응답 상태코드 ->", req.status_code)
+    # print("응답 내용일부", req.text[:500])
     soup = BeautifulSoup(req.text, "html.parser")
-    myList = []
+    newsList = []
     href = []
-    for i in soup.select(
-        "#main_content > div.list_body.newsflash_body > ul.type06_headline > li:nth-child(1) > dl > dt:nth-child(2) > a"
-    ):
-        href.append(i.attrs["href"])
-        myList.append(i.text)
-    for i in soup.select(
-        "#main_content > div.list_body.newsflash_body > ul.type06_headline > li:nth-child(2) > dl > dt:nth-child(2) > a"
-    ):
-        href.append(i.attrs["href"])
-        myList.append(i.text)
-    for i in soup.select(
-        "#main_content > div.list_body.newsflash_body > ul.type06_headline > li:nth-child(6) > dl > dt:nth-child(2) > a"
-    ):
-        href.append(i.attrs["href"])
-        myList.append(i.text)
-    for i in soup.select(
-        "#main_content > div.list_body.newsflash_body > ul.type06_headline > li:nth-child(4) > dl > dt:nth-child(2) > a"
-    ):
-        href.append(i.attrs["href"])
-        myList.append(i.text)
-    for i in soup.select(
-        "#main_content > div.list_body.newsflash_body > ul.type06_headline > li:nth-child(5) > dl > dt:nth-child(2) > a"
-    ):
-        href.append(i.attrs["href"])
-        myList.append(i.text)
-    return render_template("main.html", list=myList, list1=href)
+    newsImg = []
+
+    # #newsct > div.section_latest > div > div.section_latest_article._CONTENT_LIST._PERSIST_META > div:nth-child(1) > ul > li:nth-child(1) > div > div > div.sa_thumb._LAZY_LOADING_ERROR_HIDE > div > a > img
+    articles = soup.select(
+        "#newsct > div.section_latest > div > div.section_latest_article._CONTENT_LIST._PERSIST_META > div:nth-child(1) > ul > li"
+    )
+
+    for article in articles:
+        # 텍스트/링크 추출
+        a_tag = article.select_one("div.sa_text > a")
+        if a_tag:
+            href.append(a_tag.get("href"))
+            newsList.append(a_tag.get_text(strip=True))
+        else:
+            href.append(None)
+            newsList.append("제목 없음")
+
+        # 이미지 추출 (지연 로딩용 data-src 속성 사용)
+        img_tag = article.select_one("div.sa_thumb img")
+        if img_tag:
+            img_url = img_tag.get("data-src")
+            newsImg.append(img_url)
+        else:
+            newsImg.append(None)
+
+    print(newsList)
+    print(newsImg)
+    print(href)
+    return render_template("main.html", newsList=newsList, href=href, newsImg=newsImg)
 
 
 @main_bp.route("/main.html")
