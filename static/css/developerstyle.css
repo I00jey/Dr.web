@@ -3,33 +3,25 @@
   padding: 0;
 }
 
-/*홈페이지 전체 코드 부분*/
 body {
   background-color: #ffffff;
 }
 
-/*홈페이지의 맨 윗부분 코드 시작*/
 #main_header {
   height: 100px;
   background-color: #ffffff;
   position: relative;
 }
 
-/*header 부분의 a 태그, 현재 로고부분 지정*/
 #main_header a {
   text-decoration: none;
-  /*목록 태그 스타일 (점같은거), a태그의 밑줄 없앰*/
   color: #000000;
-  /*글자 색 지정*/
 }
 
 #main_logo {
   position: absolute;
-  /*절대 위치 좌표 설정*/
   line-height: 100px;
-  /*속성값 = header의 높이로 지정해서 수직 가운데 정렬*/
   margin-left: 100px;
-  /*왼쪽 마진 크기 지정*/
   margin-top: 15px;
 }
 
@@ -40,6 +32,7 @@ body {
   padding: 1em 0px;
   word-spacing: 60px;
 }
+
 .menu {
   font-size: 20px;
 }
@@ -54,17 +47,17 @@ ul {
   margin: 0px;
   padding: 0px;
 }
+
 li {
   display: inline;
   margin-left: 30px;
 }
 
-/*여기까지 홈페이지 윗부분 로고&메뉴 코드*/
 #main_content {
   margin: 50px;
   height: 550px;
-  padding: auto;
-  position: relative;
+  position: relative; /* 중앙 배치 기준이 되도록 */
+  overflow: hidden;
 }
 
 .search {
@@ -84,6 +77,7 @@ li {
   margin: 10px;
   height: 0 auto;
 }
+
 .input_button_div {
   display: inline-block;
   width: 100%;
@@ -91,6 +85,7 @@ li {
   margin-left: 28%;
   margin-top: -6%;
 }
+
 .input_button {
   border: none;
   text-align: center;
@@ -103,9 +98,12 @@ li {
   background-size: 80% 80%;
   background-position: 3px 3px;
 }
-/*   /* 멘트*/
+
+#main_content{
+  height: fit-content;
+}
+/* 멘트 */
 .subtitle {
-  position: absolute;
   width: 100%;
   height: 133px;
   font-style: normal;
@@ -113,110 +111,66 @@ li {
   text-shadow: 1px 1px 2px #b0b0b0;
   font-size: 48px;
   line-height: 68px;
-  /* or 142% */
   text-align: center;
   color: #000000;
+  margin-bottom: 40px;
 }
-/* 여기까지 멘트*/
 
-/*개발자 소개1 */
-.line1 {
-  align-items: left;
-  overflow: auto;
+/* 이미지들 감싸는 영역 */
+.img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
 }
-#person1 {
-  position: absolute;
-  left: 100px;
+
+/* 이미지 + 텍스트 묶음 */
+.imgbox {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
 }
-#person1 {
-  position: absolute;
-  top: 200px;
+
+/* 이미지 */
+.imgbox img {
+  width: 200px;
+  height: auto;
+  border-radius: 30px;
+  object-fit: cover;
+  box-shadow: 5px 5px 15px #dadada;
+  transition: 0.3s;
 }
-.text1_box {
-  width: 260px;
-  height: 200px;
+
+/* 설명 박스 */
+.imgtext {
+  display: none;
   position: absolute;
-  top: 90%;
-  left: 550px;
-  margin: -250px 0 0 -250px;
-  border: 7px solid #b4e1ff;
-  font-weight: 600;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
   border-radius: 20px;
-  background: #e9f6ff;
-  z-index: 2;
-  text-align: center;
-  visibility: hidden;
-}
-
-.line1:hover .text1_box {
-  visibility: visible;
-}
-/*개발자 1 소개 끝*/
-.line2 {
-  align-items: left;
-  overflow: auto;
-}
-#person2 {
-  position: absolute;
-  left: 600px;
-}
-#person2 {
-  position: absolute;
-  top: 200px;
-}
-.text2_box {
-  width: 260px;
-  height: 200px;
-  position: absolute;
-  top: 90%;
-  left: 1050px;
-  font-weight: 600;
-  border-radius: 20px;
-  margin: -250px 0 0 -250px;
   border: 7px solid #b4e1ff;
-  background: #e9f6ff;
-  z-index: 2;
-  text-align: center;
-  visibility: hidden;
-}
-.line2:hover .text2_box {
-  visibility: visible;
-}
-/*개발자 2 소개 끝*/
-.line3 {
-  align-items: left;
-  overflow: auto;
-}
-#person3 {
-  position: absolute;
-  left: 1100px;
-}
-#person3 {
-  position: absolute;
-
-  top: 200px;
-}
-.text3_box {
-  width: 260px;
-  height: 200px;
-  position: absolute;
-  top: 90%;
+  width: 70%;
+  max-width: 500px;
+  height: auto;
   font-weight: 600;
-  border-radius: 20px;
-  left: 1050px;
-  margin: -250px 0 0 -250px;
-  border: 7px solid #b4e1ff;
-  background: #e9f6ff;
-  z-index: 2;
   text-align: center;
-  visibility: hidden;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.line3:hover .text3_box {
-  visibility: visible;
-}
-/*개발자 3 소개 끝*/
-/*여기까지 개발자 소개  */
 
+/* hover 시 설명 보이기 */
+.imgbox:hover .imgtext {
+  display: block;
+}
+
+/* 하단 영역 */
 #main_bottom {
   clear: both;
   background-color: #333333;
@@ -230,7 +184,8 @@ li {
   word-spacing: 100px;
 }
 
-.modal_wrap {
+/* 모달 공통 스타일 */
+.modal_wrap, .modal_wrap1, .modal_wrap2, .modal_wrap3 {
   display: none;
   width: 500px;
   height: 200px;
@@ -246,7 +201,7 @@ li {
   text-align: center;
 }
 
-.modal_close {
+.modal_close, .modal_close1, .modal_close2, .modal_close3 {
   width: 26px;
   height: 26px;
   position: absolute;
@@ -256,7 +211,10 @@ li {
   color: #000000;
 }
 
-.modal_close > a {
+.modal_close > a,
+.modal_close1 > a,
+.modal_close2 > a,
+.modal_close3 > a {
   display: block;
   width: 100%;
   height: 100%;
@@ -267,108 +225,16 @@ li {
 #aaa {
   color: #000000;
 }
-/* 여기까지 개발자 이름 */
 
-.modal_wrap1 {
-  display: none;
-  width: 500px;
-  height: 200px;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  margin: -250px 0 0 -250px;
-  border: 7px solid #b4e1ff;
-  background: #e9f6ff;
-  font-weight: 600;
-  border-radius: 20px;
-  z-index: 2;
-  text-align: center;
-}
+/* 반응형 (모바일 등 작은 화면용) */
+@media (max-width: 768px) {
+  .img {
+    flex-direction: column;
+    gap: 40px;
+  }
 
-.modal_close1 {
-  width: 26px;
-  height: 26px;
-  position: absolute;
-  top: 3px;
-  margin-right: 3px;
-  right: 0;
-  color: #000000;
+  .imgtext {
+    width: 90%;
+    font-size: 0.9em;
+  }
 }
-
-.modal_close1 > a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: url(https://img.icons8.com/metro/26/000000/close-window.png);
-  text-indent: -9999px;
-}
-/* 여기까지 개발자 이메일 */
-
-.modal_wrap2 {
-  display: none;
-  width: 500px;
-  height: 200px;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  margin: -250px 0 0 -250px;
-  border: 7px solid #b4e1ff;
-  background: #e9f6ff;
-  font-weight: 600;
-  border-radius: 20px;
-  z-index: 2;
-  text-align: center;
-}
-
-.modal_close2 {
-  width: 26px;
-  height: 26px;
-  position: absolute;
-  top: 3px;
-  margin-right: 3px;
-  right: 0;
-  color: #000000;
-}
-
-.modal_close2 > a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: url(https://img.icons8.com/metro/26/000000/close-window.png);
-  text-indent: -9999px;
-}
-/* 여기까지 이용약관 */
-.modal_wrap3 {
-  display: none;
-  width: 500px;
-  height: 200px;
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  margin: -250px 0 0 -250px;
-  border: 7px solid #b4e1ff;
-  background: #e9f6ff;
-  font-weight: 600;
-  border-radius: 20px;
-  z-index: 2;
-  text-align: center;
-}
-
-.modal_close3 {
-  width: 26px;
-  height: 26px;
-  position: absolute;
-  top: 3px;
-  margin-right: 3px;
-  right: 0;
-  color: #000000;
-}
-
-.modal_close3 > a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: url(https://img.icons8.com/metro/26/000000/close-window.png);
-  text-indent: -9999px;
-}
-/* 여기까지 개인정보처리방침 */
