@@ -99,67 +99,93 @@ li {
 }
 
 #main_content {
-  margin: 50px;
-  padding: auto;
-  height: 500px;
+  display: flex;             /* Flexbox로 변경 */
+  justify-content: space-between;  /* 좌우 간격 자동 조정 */
+  align-items: flex-start;   /* 세로 위쪽 정렬 */
+  margin: 2% 10%;
+  gap: 40px;                 /* 요소 간 간격 */
 }
 
-#main_section {
-  width: 1000px;
-  float: left;
-}
 #news_content {
   background-color: #ffffff63;
   margin-left: 40px;
   margin-right: 40px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
+
 #box_story {
   background-color: #6fcfff;
-  width: 1000px;
+  width: 65%;                 /* 고정 width 대신 퍼센트로 지정 */
+  min-width: 600px;           /* 너무 작아지는 것 방지 */
   height: 500px;
-  margin: 0px;
   color: white;
   font-weight: bold;
-  line-height: 80px;
-  position: absolute;
   text-align: center;
   z-index: 0;
+  position: relative;         /* 기존 absolute 제거 */
 }
+
 #box_story a {
   color: #003e67;
   text-decoration-line: none;
 }
+
 #box_story h2 {
   color: rgb(241, 249, 255);
   font-size: 27px;
+  margin-top: 30px;
 }
+
 #news_content {
-  float: left;
-  margin-left: 50px;
-  width: 900px;
-  height: 400px;
+  background-color: #ffffff63;
+  margin: 20px auto;
+  border-radius: 10px;
+  padding: 10px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* 뉴스 간 간격을 고르게 */
 }
 
-#news_content img {
-  float: left;
-  margin-top: 20px;
-  margin-left: 19%;
+.news_item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;               /* 이미지와 텍스트 사이 간격 */
+  font-size: 16px;
+  line-height: 1.4;
+  padding: 5px 20px;
 }
 
-#news_content a {
-  float: left;
-  margin-left: 20px;
+.news_item img {
+  flex-shrink: 0;           /* 이미지가 줄어들지 않게 */
+  width: 80px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
 }
+
+.news_item a {
+  color: #003e67;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  max-width: 100%;
+  word-break: break-word;   /* 긴 링크 줄바꿈 허용 */
+}
+
+
 
 #fastmenu li {
   padding-right: 30px;
 }
+
 #main_fastmenu {
+  width: 30%;
+  min-width: 300px;
   font-weight: bold;
   position: relative;
-  float: right;
-  margin-left: 50px;
 }
 
 #main_bottom {
@@ -318,3 +344,16 @@ li {
 }
 
 /* 여기까지 개인정보처리방침 */
+
+
+@media screen and (max-width: 900px) {
+  #main_content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #box_story,
+  #main_fastmenu {
+    width: 100%;
+  }
+}
