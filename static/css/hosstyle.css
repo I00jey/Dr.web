@@ -12,11 +12,14 @@ body {
 /*홈페이지 전체 코드 부분*/
 body {
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
 }
+
 #all_content {
-  height: auto;
-  min-height: 100%;
-  padding-bottom: 26px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 /*홈페이지의 맨 윗부분 코드 시작*/
 #main_header {
@@ -109,9 +112,10 @@ li {
   background-position: 3px 3px;
 }
 #content {
+  flex: 1;
   margin: 0px auto;
   height: 100%;
-  min-height: 100vh;
+  max-height: 100%;
   width: 100%;
   padding: auto;
   position: relative;
@@ -338,14 +342,8 @@ button {
   clear: both;
   background-color: #333333;
   color: white;
-  width: 100%;
   text-align: center;
-  height: 26px;
-  position: relative;
   padding: 1em 0px;
-  left: 0;
-  bottom: 0;
-  transform: translateY(-100%);
 }
 
 .bottom {
