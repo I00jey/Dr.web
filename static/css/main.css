@@ -66,8 +66,8 @@ li {
   width: 600px;
   border: 7px solid #6fc5ff;
   background: #ffffff;
-  margin-left: 450px;
-  margin-bottom: 20px;
+  margin: 20px auto;
+  display: block;
 }
 
 .input_text {

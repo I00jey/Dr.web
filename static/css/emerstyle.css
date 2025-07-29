@@ -76,9 +76,10 @@ li {
   width: 600px;
   border: 7px solid #6fc5ff;
   background: #ffffff;
-  margin-left: 450px;
-  margin-bottom: 20px;
+  margin: 20px auto;
+  display: block;
 }
+
 
 .input_text {
   font-size: 16px;
@@ -264,24 +265,6 @@ button {
 }
 #item_where {
   text-align: center;
-}
-.num {
-  display: inline-block;
-  width: 150px;
-  left: 45%;
-  padding-right: 20px;
-}
-.time1 {
-  display: inline-block;
-  width: 150px;
-  left: 45%;
-  padding-right: 20px;
-}
-.time2 {
-  display: inline-block;
-  width: 150px;
-  left: 45%;
-  padding-right: 10px;
 }
 
 #main_bottom {
