@@ -106,10 +106,11 @@ li {
   background: #4cb7ff;
   cursor: pointer;
   padding: 0.8rem 1.3rem;
-  background-image: url("/static/image/searchicon.png");
+  background-image: url("../image/searchicon.png");
   background-repeat: no-repeat;
   background-size: 80% 80%;
   background-position: 3px 3px;
+  
 }
 #content {
   flex: 1;
