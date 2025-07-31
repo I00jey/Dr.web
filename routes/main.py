@@ -10,40 +10,41 @@ main_bp = Blueprint("main", __name__)
 
 @main_bp.route("/")
 def start():
-    req = requests.get(os.getenv("NEWS_URL"), headers={"User-Agent": "Mozilla/5.0"})
-    print("응답 상태코드 ->", req.status_code)
-    # print("응답 내용일부", req.text[:500])
-    soup = BeautifulSoup(req.text, "html.parser")
     newsList = []
     href = []
     newsImg = []
+    try:
+        req = requests.get(
+            os.getenv("NEWS_URL"), headers={"User-Agent": "Mozilla/5.0"}, timeout=5
+        )
+        print("응답 상태코드 ->", req.status_code)
 
-    # #newsct > div.section_latest > div > div.section_latest_article._CONTENT_LIST._PERSIST_META > div:nth-child(1) > ul > li:nth-child(1) > div > div > div.sa_thumb._LAZY_LOADING_ERROR_HIDE > div > a > img
-    articles = soup.select(
-        "#newsct > div.section_latest > div > div.section_latest_article._CONTENT_LIST._PERSIST_META > div:nth-child(1) > ul > li"
-    )
+        soup = BeautifulSoup(req.text, "html.parser")
 
-    for article in articles:
-        # 텍스트/링크 추출
-        a_tag = article.select_one("div.sa_text > a")
-        if a_tag:
-            href.append(a_tag.get("href"))
-            newsList.append(a_tag.get_text(strip=True))
-        else:
-            href.append(None)
-            newsList.append("제목 없음")
+        articles = soup.select(
+            "#newsct > div.section_latest > div > div.section_latest_article._CONTENT_LIST._PERSIST_META > div:nth-child(1) > ul > li"
+        )
 
-        # 이미지 추출 (지연 로딩용 data-src 속성 사용)
-        img_tag = article.select_one("div.sa_thumb img")
-        if img_tag:
-            img_url = img_tag.get("data-src")
-            newsImg.append(img_url)
-        else:
-            newsImg.append(None)
+        for article in articles:
+            # 텍스트/링크 추출
+            a_tag = article.select_one("div.sa_text > a")
+            if a_tag:
+                href.append(a_tag.get("href"))
+                newsList.append(a_tag.get_text(strip=True))
+            else:
+                href.append(None)
+                newsList.append("제목 없음")
 
-    print(newsList)
-    print(newsImg)
-    print(href)
+            # 이미지 추출 (지연 로딩용 data-src 속성 사용)
+            img_tag = article.select_one("div.sa_thumb img")
+            if img_tag:
+                img_url = img_tag.get("data-src")
+                newsImg.append(img_url)
+            else:
+                newsImg.append(None)
+    except Exception as e:
+        print("뉴스 크롤링 실패:", e)
+
     return render_template("main.html", newsList=newsList, href=href, newsImg=newsImg)
 
 
