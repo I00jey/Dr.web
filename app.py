@@ -9,10 +9,10 @@ from routes.emergency import emergency_bp
 from routes.board import board_bp
 from routes.main import main_bp
 
-load_dotenv('config.env')
+load_dotenv("config.env")
 
 app = Flask(__name__)
-app.secret_key = os.getenv('SECRET_KEY')
+app.secret_key = os.getenv("SECRET_KEY")
 
 # 블루프린트 등록
 app.register_blueprint(hospital_bp)
@@ -23,7 +23,7 @@ app.register_blueprint(main_bp)
 
 if __name__ == "__main__":
     app.run(
-        host=os.getenv('FLASK_HOST', '0.0.0.0'), 
-        port=int(os.getenv('FLASK_PORT', 8080)), 
-        debug=os.getenv('FLASK_DEBUG', 'True').lower() == 'true'
-    ) 
+        host=os.getenv("FLASK_HOST", "0.0.0.0"),
+        port=int(os.getenv("FLASK_PORT", 8080)),
+        debug=os.getenv("FLASK_DEBUG", "False").lower() == "false",
+    )
