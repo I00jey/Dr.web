@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, request, redirect
+from flask import Blueprint, render_template, request, redirect, Response
+import requests
 from db import get_db_connection, get_cursor
 import requests
 from bs4 import BeautifulSoup
@@ -71,16 +72,29 @@ def medi():
     return render_template("medi.html")
 
 
+@main_bp.route("/image_proxy")
+def image_proxy():
+    image_url = request.args.get("url")
+    if not image_url:
+        return "missing url", 400
+    try:
+        r = requests.get(image_url, stream=True)
+        content_type = r.headers.get("Content-Type", "image/jpg")
+        return Response(r.content, content_type=content_type)
+    except Exception as e:
+        return f"failed to fetch image : {e}", 500
+
+
 @main_bp.route("/medi_result", methods=["POST"])
 def medi_result():
     name = request.form.get("name")
-    part = request.form.get("part")
+    color = request.form.get("color")
     shape = request.form.get("shape")
-    kind = request.form.get("kind")
+    element = request.form.get("element")
     conn = get_db_connection()
     cursor = get_cursor(conn)
-    sql = "SELECT * FROM medi_table where medi_name like '%{}%' and medi_kind like '%{}%' and medi_shape like '%{}%' and medi_part like '%{}%'".format(
-        name, kind, shape, part
+    sql = "SELECT * FROM medi_table where medi_name like '%{}%' and medi_color like '%{}%' and medi_shape like '%{}%' and medi_element like '%{}%'".format(
+        name, color, shape, element
     )
     cursor.execute(sql)
     data_list = cursor.fetchall()
@@ -89,9 +103,9 @@ def medi_result():
         "medi_result.html",
         data_list_medi=data_list,
         name=name,
-        part=part,
+        color=color,
         shape=shape,
-        kind=kind,
+        element=element,
     )
 
 

@@ -267,18 +267,6 @@ button {
 #item_where {
   text-align: center;
 }
-.num {
-  display: inline-block;
-  width: 200px;
-  left: 45%;
-  padding-right: 20px;
-}
-.con {
-  display: inline-block;
-  width: 200px;
-  left: 45%;
-  padding-right: 20px;
-}
 
 #main_bottom {
   clear: both;

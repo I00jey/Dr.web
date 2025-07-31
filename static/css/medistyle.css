@@ -318,29 +318,31 @@ button {
   height: 100px;
   margin-bottom: -35px;
 }
+
+
+.image {
+  display: inline-block;
+  width: 20%;
+  left: 45%;
+}
 .name {
   display: inline-block;
-  width: 390px;
+  width: 10%;
   left: 45%;
 }
-.comp {
+.tag {
   display: inline-block;
-  width: 190px;
+  width: 10%;
   left: 45%;
 }
-.kind {
+.element {
   display: inline-block;
-  width: 190px;
+  width: 20%;
   left: 45%;
 }
-.shape {
+.desc {
   display: inline-block;
-  width: 180px;
-  left: 45%;
-}
-.part {
-  display: inline-block;
-  width: 400px;
+  width: 30%;
   left: 45%;
 }
 

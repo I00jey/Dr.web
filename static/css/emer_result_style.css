@@ -237,7 +237,7 @@ button {
 .content2data {
   color: #393939;
   text-align: center;
-  font-size: 11pt;
+  font-size: 13pt;
   position: relative;
   margin-top: -70px;
 }
@@ -252,13 +252,13 @@ button {
 }
 .name {
   display: inline-block;
-  width: 270px;
+  width: 30%;
   left: 45%;
   padding-right: 40px;
 }
 .where {
   display: inline-block;
-  width: 430px;
+  width: 60%;
   left: 45%;
   text-align: left;
   padding-right: 20px;

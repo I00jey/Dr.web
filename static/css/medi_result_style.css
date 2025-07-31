@@ -327,27 +327,28 @@ button {
   height: 100px;
   margin-bottom: -35px;
 }
+.image {
+  display: inline-block;
+  width: 190px;
+  left: 45%;
+}
 .name {
   display: inline-block;
   width: 390px;
   left: 45%;
 }
-.comp {
+
+.element {
   display: inline-block;
   width: 190px;
   left: 45%;
 }
-.kind {
-  display: inline-block;
-  width: 190px;
-  left: 45%;
-}
-.shape {
+.tag {
   display: inline-block;
   width: 180px;
   left: 45%;
 }
-.part {
+.desc {
   display: inline-block;
   width: 400px;
   left: 45%;

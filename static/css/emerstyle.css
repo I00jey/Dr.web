@@ -254,18 +254,17 @@ button {
 }
 .name {
   display: inline-block;
-  width: 200px;
+  width: 30%;
   left: 45%;
   padding-right: 40px;
 }
 .where {
   display: inline-block;
-  width: 430px;
+  width: 60%;
   left: 45%;
   text-align: left;
   padding-right: 20px;
 }
-
 #item_where {
   text-align: center;
 }
