@@ -14,9 +14,7 @@ def start():
     href = []
     newsImg = []
     try:
-        req = requests.get(
-            os.getenv("NEWS_URL"), headers={"User-Agent": "Mozilla/5.0"}, timeout=5
-        )
+        req = requests.get(os.getenv("NEWS_URL"), headers={"User-Agent": "Mozilla/5.0"})
         print("응답 상태코드 ->", req.status_code)
 
         soup = BeautifulSoup(req.text, "html.parser")
