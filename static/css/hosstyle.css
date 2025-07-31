@@ -12,14 +12,10 @@ body {
 /*홈페이지 전체 코드 부분*/
 body {
   background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
 }
-
 #all_content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  height: auto;
+  min-height: 100%;
 }
 /*홈페이지의 맨 윗부분 코드 시작*/
 #main_header {
@@ -113,7 +109,6 @@ li {
   
 }
 #content {
-  flex: 1;
   margin: 0px auto;
   height: 100%;
   max-height: 100%;
